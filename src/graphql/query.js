@@ -21,8 +21,8 @@ export const GET_USER_BY_ID = gql`
 `;
 
 export const GET_PRODUCTS = gql`
-  query GetAllProducts {
-    getAllProducts {
+  query GetProduct($search: String!) {
+    getAllProducts(search: $search) {
       id
       name
       price

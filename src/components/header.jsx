@@ -14,13 +14,6 @@ export default function Header({ setSidebarOpen }) {
 
   const userNavigation = [
     {
-      name: "Change Password",
-      href: "#",
-      onClick: function () {
-        setOpen(true);
-      },
-    },
-    {
       name: "Logout",
       href: "/login",
       onClick: function () {
@@ -42,28 +35,8 @@ export default function Header({ setSidebarOpen }) {
         <div aria-hidden="true" className="w-px h-6 bg-gray-200 lg:hidden" />
 
         <div className="flex self-stretch flex-1 gap-x-4 lg:gap-x-6">
-          <form action="#" method="GET" className="relative flex flex-1">
-            {/* <label htmlFor="search-field" className="sr-only">
-              Search
-            </label>
-            <MagnifyingGlassIcon
-              aria-hidden="true"
-              className="absolute inset-y-0 left-0 w-5 h-full text-gray-400 pointer-events-none"
-            />
-            <input
-              id="search-field"
-              name="search"
-              type="search"
-              placeholder="Search..."
-              className="block w-full h-full py-0 pl-8 pr-0 text-gray-900 border-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-            /> */}
-          </form>
+          <form action="#" method="GET" className="relative flex flex-1"></form>
           <div className="flex items-center gap-x-4 lg:gap-x-6">
-            {/* <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="w-6 h-6" />
-            </button> */}
-
             {/* Separator */}
             <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
 
