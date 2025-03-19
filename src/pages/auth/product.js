@@ -16,7 +16,7 @@ const Products = () => {
       <br />
       <div className="w-1/4">
         <button
-          onClick={() => navigate("/product/create")}
+          onClick={() => navigate("/products/create")}
           disabled={loading}
           className={`w-full py-2 text-white font-semibold rounded-lg transition-all bg-blue-600 hover:bg-blue-700`}
         >

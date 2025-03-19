@@ -13,34 +13,39 @@ const FormUser = ({ defaultValues }) => {
   const [register, { loading1 }] = useMutation(CREATE_USER_MUTATION);
 
   const handle = () => {
-    try {
-      Swal.fire({
-        title: "Apakah data yang dimasukan sudah benar",
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonColor: "#0891B2",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Save",
-        showLoaderOnConfirm: true,
-        preConfirm: async () => {
+    Swal.fire({
+      title: "Apakah data yang dimasukan sudah benar",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#0891B2",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Save",
+      showLoaderOnConfirm: true,
+      preConfirm: async () => {
+        try {
           if (defaultValues.id) {
             await updateUser({ variables: { id: defaultValues.id, name, email } });
           } else {
             await register({ variables: { name, email, password } });
           }
           navigate("/users");
-        },
-        allowOutsideClick: () => !Swal.isLoading(),
-      });
-    } catch (err) {
-      console.error("Mutation error:", err);
-      if (err.graphQLErrors) {
-        console.error("GraphQL Errors:", err.graphQLErrors);
-      }
-      if (err.networkError) {
-        console.error("Network Error:", err.networkError);
-      }
-    }
+        } catch (err) {
+          console.error("Mutation error:", err);
+          if (err.graphQLErrors) {
+            Swal.fire("Failed!", err.graphQLErrors[0].message, "error").then(() => {
+              setName("");
+              setEmail("");
+              setPassword("");
+            });
+            console.error("GraphQL Errors:", err.graphQLErrors[0].message);
+          }
+          if (err.networkError) {
+            console.error("Network Error:", err.networkError);
+          }
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading(),
+    });
   };
 
   return (
@@ -75,7 +80,7 @@ const FormUser = ({ defaultValues }) => {
 
           {!defaultValues.id && (
             <div className="mb-4">
-              <label className="block text-gray-600 text-sm mb-1">Email</label>
+              <label className="block text-gray-600 text-sm mb-1">Password</label>
               <input
                 type="password"
                 value={password}

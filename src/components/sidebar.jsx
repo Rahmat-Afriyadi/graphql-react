@@ -1,5 +1,5 @@
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from "@headlessui/react";
-import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebars({ sidebarOpen, setSidebarOpen }) {
@@ -47,7 +47,7 @@ export default function Sidebars({ sidebarOpen, setSidebarOpen }) {
                       </li>
                       <li>
                         <NavLink
-                          to="/product"
+                          to="/products"
                           className={({ isActive }) =>
                             `group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 
                 ${isActive ? "bg-gray-50 text-indigo-600" : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"}`
@@ -78,6 +78,19 @@ export default function Sidebars({ sidebarOpen, setSidebarOpen }) {
                 <ul className="-mx-2 space-y-1">
                   <li className="rounded-lg border-2 border-slate-200">
                     <NavLink
+                      to="/"
+                      end
+                      className={({ isActive }) =>
+                        `group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 
+                ${isActive ? "bg-slate-800 text-yellow-200" : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"}`
+                      }
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+
+                  <li className="rounded-lg border-2 border-slate-200">
+                    <NavLink
                       to="/users"
                       className={({ isActive }) =>
                         `group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 
@@ -89,7 +102,7 @@ export default function Sidebars({ sidebarOpen, setSidebarOpen }) {
                   </li>
                   <li className="rounded-lg border-2 border-slate-200">
                     <NavLink
-                      to="/product"
+                      to="/products"
                       className={({ isActive }) =>
                         `group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 
                 ${isActive ? "bg-slate-800 text-yellow-200" : "text-gray-700 hover:bg-gray-50 hover:text-indigo-600"}`
@@ -99,18 +112,6 @@ export default function Sidebars({ sidebarOpen, setSidebarOpen }) {
                     </NavLink>
                   </li>
                 </ul>
-              </li>
-              <li className="mt-auto">
-                <a
-                  href="/"
-                  className="flex p-2 -mx-2 text-sm font-semibold leading-6 text-gray-700 rounded-md group gap-x-3 hover:bg-gray-50 hover:text-indigo-600"
-                >
-                  <Cog6ToothIcon
-                    aria-hidden="true"
-                    className="w-6 h-6 text-gray-400 shrink-0 group-hover:text-indigo-600"
-                  />
-                  Settings
-                </a>
               </li>
             </ul>
           </nav>

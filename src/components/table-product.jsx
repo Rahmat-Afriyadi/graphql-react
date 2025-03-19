@@ -74,7 +74,7 @@ const TableProduct = ({ data, refetch }) => {
               <td className="px-6 py-3">
                 <a
                   className="px-3 py-1 text-sm text-white bg-green-500 rounded hover:bg-green-600"
-                  href={"/product/" + item.id}
+                  href={"/products/" + item.id}
                 >
                   Edit
                 </a>

@@ -1,6 +1,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Avatar from "./avatar";
 import Drawer from "./drawer";
 import { useState } from "react";
@@ -43,7 +43,7 @@ export default function Header({ setSidebarOpen }) {
 
         <div className="flex self-stretch flex-1 gap-x-4 lg:gap-x-6">
           <form action="#" method="GET" className="relative flex flex-1">
-            <label htmlFor="search-field" className="sr-only">
+            {/* <label htmlFor="search-field" className="sr-only">
               Search
             </label>
             <MagnifyingGlassIcon
@@ -56,13 +56,13 @@ export default function Header({ setSidebarOpen }) {
               type="search"
               placeholder="Search..."
               className="block w-full h-full py-0 pl-8 pr-0 text-gray-900 border-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
-            />
+            /> */}
           </form>
           <div className="flex items-center gap-x-4 lg:gap-x-6">
-            <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
+            {/* <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
               <span className="sr-only">View notifications</span>
               <BellIcon aria-hidden="true" className="w-6 h-6" />
-            </button>
+            </button> */}
 
             {/* Separator */}
             <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />

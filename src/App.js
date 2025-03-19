@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { client, authClient } from "./apolloClient";
 import store from "./store/store";
 import Login from "./pages/login";
+import Home from "./pages/index";
+import Register from "./pages/register";
 import Users from "./pages/auth/user";
 import Products from "./pages/auth/product";
 import DetailProduct from "./pages/auth/product-detail";
@@ -19,8 +21,11 @@ const App = () => {
         {/* Public Routes (Tanpa Auth, Pakai client) */}
         <ApolloProvider client={client}>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </ApolloProvider>
 
@@ -32,9 +37,9 @@ const App = () => {
                 <Route path="/users" element={<Users />} />
                 <Route path="/users/create" element={<DetailUser />} />
                 <Route path="/users/:id" element={<DetailUser />} />
-                <Route path="/product" element={<Products />} />
-                <Route path="/product/create" element={<DetailProduct />} />
-                <Route path="/product/:id" element={<DetailProduct />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/products/create" element={<DetailProduct />} />
+                <Route path="/products/:id" element={<DetailProduct />} />
               </Route>
             </Route>
           </Routes>

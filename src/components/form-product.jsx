@@ -28,7 +28,7 @@ const FormProduct = ({ defaultValues }) => {
           } else {
             await createProduct({ variables: { name, price, stock } });
           }
-          navigate("/product");
+          navigate("/products");
         },
         allowOutsideClick: () => !Swal.isLoading(),
       });

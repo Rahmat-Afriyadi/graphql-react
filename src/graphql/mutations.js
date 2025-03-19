@@ -13,11 +13,12 @@ export const LOGIN_MUTATION = gql`
 `;
 
 export const CREATE_USER_MUTATION = gql`
-  mutation DeleteProduct($name: String!, $email: String!, $password: String!) {
+  mutation CreateUser($name: String!, $email: String!, $password: String!) {
     register(name: $name, email: $email, password: $password) {
       token
       user {
         email
+        name
       }
     }
   }

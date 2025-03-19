@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Users = () => {
   const navigate = useNavigate();
   const { loading, error, data, refetch } = useQuery(GET_USERS);
-  console.log("ini data yaa ", data);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
